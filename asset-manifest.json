@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/carrinho/static/js/main.e8e2a7b5.chunk.js",
-    "main.js.map": "/carrinho/static/js/main.e8e2a7b5.chunk.js.map",
+    "main.js": "/carrinho/static/js/main.b9b97c8d.chunk.js",
+    "main.js.map": "/carrinho/static/js/main.b9b97c8d.chunk.js.map",
     "runtime-main.js": "/carrinho/static/js/runtime-main.860d657a.js",
     "runtime-main.js.map": "/carrinho/static/js/runtime-main.860d657a.js.map",
-    "static/js/2.436242b5.chunk.js": "/carrinho/static/js/2.436242b5.chunk.js",
-    "static/js/2.436242b5.chunk.js.map": "/carrinho/static/js/2.436242b5.chunk.js.map",
+    "static/js/2.5d08d49f.chunk.js": "/carrinho/static/js/2.5d08d49f.chunk.js",
+    "static/js/2.5d08d49f.chunk.js.map": "/carrinho/static/js/2.5d08d49f.chunk.js.map",
     "index.html": "/carrinho/index.html",
-    "static/js/2.436242b5.chunk.js.LICENSE.txt": "/carrinho/static/js/2.436242b5.chunk.js.LICENSE.txt"
+    "static/js/2.5d08d49f.chunk.js.LICENSE.txt": "/carrinho/static/js/2.5d08d49f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.860d657a.js",
-    "static/js/2.436242b5.chunk.js",
-    "static/js/main.e8e2a7b5.chunk.js"
+    "static/js/2.5d08d49f.chunk.js",
+    "static/js/main.b9b97c8d.chunk.js"
   ]
 }
