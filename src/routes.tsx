@@ -5,8 +5,8 @@ import useHandleTheme from './utils/useHandleTheme';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import intl from 'react-intl-universal';
 
-import Home from './components/Home';
-import Error from './components/Error';
+import Home from './pages/Home';
+import Error from './pages/Error';
 
 const Routes: React.FC = () => {
   const { theme, handleTheme } = useHandleTheme();

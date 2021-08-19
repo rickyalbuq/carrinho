@@ -22,5 +22,9 @@ export const TitleWrapper = styled.div(
     > p {
       margin-bottom: ${theme.spacings.lg};
     }
+
+    > a {
+      margin-top: ${theme.spacings.huge};
+    }
   `,
 );

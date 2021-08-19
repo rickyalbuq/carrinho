@@ -4,6 +4,7 @@ import { ThemeContext } from 'styled-components';
 import intl from 'react-intl-universal';
 
 import { TitleWrapper } from './styles';
+import Button from '../../components/Button';
 
 interface Props {
   handleTheme(): void;
@@ -30,6 +31,8 @@ const Home: React.FC<Props> = ({ handleTheme }) => {
         offHandleColor={theme.colors.bgHigh}
         offColor={theme.colors.bgMedium}
       />
+
+      <Button type="cta" to="" label={intl.get('home.toStart')} />
     </TitleWrapper>
   );
 };
