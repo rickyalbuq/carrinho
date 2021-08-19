@@ -17,5 +17,6 @@
     "noImplicitAny": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "files": ["src/styles/styled.d.ts"]
 }
