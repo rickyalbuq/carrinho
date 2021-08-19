@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
+import intl from 'react-intl-universal';
 
 import { TitleWrapper } from './styles';
 
@@ -13,8 +14,8 @@ const Home: React.FC<Props> = ({ handleTheme }) => {
 
   return (
     <TitleWrapper>
-      <h1>Carrinho</h1>
-      <p>by RickyAlbuq</p>
+      <h1>{intl.get('home.title')}</h1>
+      <p>{intl.get('home.subtitle')}</p>
 
       <Switch
         onChange={handleTheme}

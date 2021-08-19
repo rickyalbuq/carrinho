@@ -1,20 +1,21 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import useHandleTheme from './utils/useHandleTheme';
+import useTranslation from './utils/useTranslation';
 
-import GlobalStyle from './styles/globals';
-import Home from './components/Home';
+import Routes from './routes';
 
 function App() {
-  const { theme, handleTheme } = useHandleTheme();
+  const loading = useTranslation();
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <GlobalStyle />
-        <Home handleTheme={handleTheme} />
-      </div>
-    </ThemeProvider>
+    <>
+      {!loading ? (
+        <div className="App">
+          <Routes />
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </>
   );
 }
 
