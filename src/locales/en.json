@@ -1,0 +1,53 @@
+{
+  "home": {
+    "title": "Cart",
+    "subtitle": "by RickyAlbuq",
+    "toStart": "Start"
+  },
+
+  "dashboard": {
+    "title": "Store",
+    "placeholder": "Search for a product",
+    "toBuy": "Buy",
+    "empty": "It looks like there are no products at the moment! 😕",
+    "found": "Showing {amount} result(s) for search"
+  },
+
+  "cart": {
+    "title": "Cart",
+    "subtitle": "{amount} product(s)",
+    "total": "total",
+    "toFinish": "Conclude",
+    "empty": "Add some product to the cart! 🛍"
+  },
+
+  "product": {
+    "title": "Store",
+    "toBuy": "Buy",
+    "details": "Details",
+    "vendor": "Vendor",
+    "brand": "Brand"
+  },
+
+  "confirm": {
+    "title": "Store",
+    "subtitle": "Awaiting payment confirmation.",
+    "details": "Purchase Details",
+    "total": "total",
+    "thanks": "Thanks for shopping with us! 😍",
+    "toFinish": "Conclude"
+  },
+
+  "routes": {
+    "home": "/",
+    "dashboard": "dashboard/",
+    "product": "product/{id}",
+    "confirm": "confirmation",
+    "error": "*"
+  },
+
+  "errors": {
+    "msg404": "Page not found",
+    "msg500": "Internal server error"
+  }
+}

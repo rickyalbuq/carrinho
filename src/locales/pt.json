@@ -1,0 +1,53 @@
+{
+  "home": {
+    "title": "Carrinho",
+    "subtitle": "por RickyAlbuq",
+    "toStart": "Começar"
+  },
+
+  "dashboard": {
+    "title": "Loja",
+    "placeholder": "Buscar um produto",
+    "toBuy": "Comprar",
+    "empty": "Parece que não há produtos no momento! 😕",
+    "found": "Exibindo {amount} resultado(s) para a busca"
+  },
+
+  "cart": {
+    "title": "Carrinho",
+    "subtitle": "{amount} produto(s)",
+    "total": "total",
+    "toFinish": "Finalizar",
+    "empty": "Adicione algum produto no carrinho! 🛍"
+  },
+
+  "product": {
+    "title": "Loja",
+    "toBuy": "Comprar",
+    "details": "Detalhes",
+    "vendor": "Vendedor",
+    "brand": "Marca"
+  },
+
+  "confirm": {
+    "title": "Loja",
+    "subtitle": "Aguardando confirmação de pagamento.",
+    "details": "Detalhes da compra",
+    "total": "total",
+    "thanks": "Obrigado por comprar conosco! 😍",
+    "toFinish": "Finalizar"
+  },
+
+  "routes": {
+    "home": "/",
+    "dashboard": "inicio/",
+    "product": "produto/{id}",
+    "confirm": "confirmacao",
+    "error": "*"
+  },
+
+  "errors": {
+    "msg404": "Página não encontrada",
+    "msg500": "Erro interno no servidor"
+  }
+}
