@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import intl from 'react-intl-universal';
+import axios from 'axios';
+import usePersistedState from '../../utils/usePersistedState';
 
 import { TitleWrapper } from './styles';
 import Button from '../../components/Button';
+import IProduct from '../../utils/product';
 
 interface Props {
   handleTheme(): void;
@@ -12,6 +15,24 @@ interface Props {
 
 const Home: React.FC<Props> = ({ handleTheme }) => {
   const theme = useContext(ThemeContext);
+  const [products, setProducts] = usePersistedState<Array<IProduct>>(
+    'products',
+    [],
+  );
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get(
+          'https://gist.githubusercontent.com/viniciustodesco/e283682c99e38b7b8f09b6a44d1a3793/raw/84db85764c6a21ce8cfd67598e9afec258aeda45/products.json',
+        );
+        setProducts(response?.data?.products);
+      } catch (error) {
+        console.error(error);
+        setProducts([]);
+      }
+    })();
+  }, [setProducts]);
 
   return (
     <TitleWrapper>
@@ -32,7 +53,11 @@ const Home: React.FC<Props> = ({ handleTheme }) => {
         offColor={theme.colors.bgMedium}
       />
 
-      <Button type="cta" to="" label={intl.get('home.toStart')} />
+      <Button
+        type="cta"
+        label={intl.get('home.toStart')}
+        toGo={intl.get('routes.dashboard')}
+      />
     </TitleWrapper>
   );
 };

@@ -20,5 +20,5 @@
     "removeComments": true
   },
   "include": ["src"],
-  "files": ["src/styles/styled.d.ts"]
+  "files": ["src/styles/styled.d.ts", "src/utils/product.d.ts"]
 }

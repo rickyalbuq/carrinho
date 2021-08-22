@@ -40,10 +40,10 @@
 
   "routes": {
     "home": "/",
-    "dashboard": "inicio/",
-    "product": "produto/{id}",
-    "confirm": "confirmacao",
-    "error": "*"
+    "dashboard": "/inicio",
+    "product": "/produto/{id}",
+    "confirm": "/confirmacao",
+    "error": "/*"
   },
 
   "errors": {

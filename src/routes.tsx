@@ -6,7 +6,9 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import intl from 'react-intl-universal';
 
 import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 import Error from './pages/Error';
+import Product from './pages/Product';
 
 const Routes: React.FC = () => {
   const { theme, handleTheme } = useHandleTheme();
@@ -19,7 +21,13 @@ const Routes: React.FC = () => {
           <Route path={intl.get('routes.home')} exact>
             <Home handleTheme={handleTheme} />
           </Route>
-          <Route path={intl.get('routes.error')} exact>
+          <Route path={intl.get('routes.dashboard')}>
+            <Dashboard />
+          </Route>
+          <Route path={intl.get('routes.product', { id: '' })}>
+            <Product />
+          </Route>
+          <Route path={intl.get('routes.error')}>
             <Error status="404" />
           </Route>
         </Switch>
