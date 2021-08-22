@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/carrinho/static/js/main.2aee19f3.chunk.js",
-    "main.js.map": "/carrinho/static/js/main.2aee19f3.chunk.js.map",
+    "main.js": "/carrinho/static/js/main.9ede47da.chunk.js",
+    "main.js.map": "/carrinho/static/js/main.9ede47da.chunk.js.map",
     "runtime-main.js": "/carrinho/static/js/runtime-main.860d657a.js",
     "runtime-main.js.map": "/carrinho/static/js/runtime-main.860d657a.js.map",
-    "static/js/2.1dfefb7e.chunk.js": "/carrinho/static/js/2.1dfefb7e.chunk.js",
-    "static/js/2.1dfefb7e.chunk.js.map": "/carrinho/static/js/2.1dfefb7e.chunk.js.map",
+    "static/js/2.7c79e399.chunk.js": "/carrinho/static/js/2.7c79e399.chunk.js",
+    "static/js/2.7c79e399.chunk.js.map": "/carrinho/static/js/2.7c79e399.chunk.js.map",
     "index.html": "/carrinho/index.html",
-    "static/js/2.1dfefb7e.chunk.js.LICENSE.txt": "/carrinho/static/js/2.1dfefb7e.chunk.js.LICENSE.txt",
+    "static/js/2.7c79e399.chunk.js.LICENSE.txt": "/carrinho/static/js/2.7c79e399.chunk.js.LICENSE.txt",
     "static/media/cart.988125d9.svg": "/carrinho/static/media/cart.988125d9.svg",
     "static/media/trash.899f2d34.svg": "/carrinho/static/media/trash.899f2d34.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.860d657a.js",
-    "static/js/2.1dfefb7e.chunk.js",
-    "static/js/main.2aee19f3.chunk.js"
+    "static/js/2.7c79e399.chunk.js",
+    "static/js/main.9ede47da.chunk.js"
   ]
 }
