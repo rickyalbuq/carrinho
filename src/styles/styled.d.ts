@@ -50,6 +50,7 @@ declare module 'styled-components' {
       lg: string;
       xl: string;
       xxl: string;
+      xxxl: string;
       huge: string;
     };
 

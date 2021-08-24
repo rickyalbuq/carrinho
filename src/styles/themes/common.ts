@@ -39,6 +39,7 @@ const common = {
     lg: rem(32),
     xl: rem(40),
     xxl: rem(56),
+    xxxl: rem(80),
     huge: rem(104),
   },
 

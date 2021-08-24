@@ -32,7 +32,11 @@ const Home: React.FC<Props> = ({ handleTheme }) => {
         offColor={theme.colors.bgMedium}
       />
 
-      <Button type="cta" to="" label={intl.get('home.toStart')} />
+      <Button
+        type="ctaLink"
+        label={intl.get('home.toStart')}
+        toGo={intl.get('routes.dashboard')}
+      />
     </TitleWrapper>
   );
 };
