@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import intl from 'react-intl-universal';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
 
 import Button from '../../components/Button';
 import Header from '../../components/Header';
+import { addToCart } from '../../state/actionCreators';
+import { State } from '../../state/reducers';
 import { Container } from '../../styles/common';
-import IProduct from '../../utils/product';
+import { Product } from '../../utils/common';
+
 import {
   Breadcrumbs,
   DescriptionWrapper,
@@ -17,15 +22,17 @@ import {
   Title,
 } from './styles';
 
-const Product: React.FC = () => {
+const ProductDetail: React.FC = () => {
   const location = useLocation();
-  const [product, setProduct] = useState<IProduct>();
+  const dispatch = useDispatch();
+  const products = useSelector((state: State) => state.product);
+  const addItem = bindActionCreators(addToCart, dispatch);
+
+  const [product, setProduct] = useState<Product>();
 
   useEffect(() => {
-    const products = JSON.parse(localStorage.getItem('products') || '{}');
-
     setProduct(
-      products?.filter((item: IProduct) =>
+      products?.filter((item: Product) =>
         location.pathname.substr(
           intl.get('routes.product', { id: '' }).length,
         ) === item?.sku
@@ -33,7 +40,7 @@ const Product: React.FC = () => {
           : undefined,
       )[0],
     );
-  }, [location.pathname, setProduct]);
+  }, [location.pathname, products]);
 
   return (
     <Container>
@@ -51,7 +58,9 @@ const Product: React.FC = () => {
               <Button
                 type="cta"
                 label={intl.get('product.toBuy')}
-                toGo={intl.get('routes.dashboard')}
+                addItem={() =>
+                  addItem({ sku: product?.sku, amount: 1, product })
+                }
               />
             </DescriptionWrapper>
           </RowWrapper>
@@ -81,4 +90,4 @@ const Product: React.FC = () => {
   );
 };
 
-export default Product;
+export default ProductDetail;
