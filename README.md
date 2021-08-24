@@ -11,7 +11,7 @@
 
 ---
 
-  <img src="" alt="Exemplo de uso"/>
+  ![gif](readme.gif)
 
 ---
 
