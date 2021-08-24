@@ -11,6 +11,10 @@
 
 ---
 
+  <img src="" alt="Exemplo de uso"/>
+
+---
+
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
@@ -47,6 +51,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Native](https://reactnative.dev/)
 - [Styled Components](https://styled-components.com/)
+- [Redux](https://redux.js.org/)
 - [Axios](https://github.com/axios/axios)
 - [Prettier](https://prettier.io/)
 

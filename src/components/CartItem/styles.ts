@@ -23,9 +23,10 @@ export const RowWrapper = styled.li.attrs(() => ({
 );
 
 export const ImgWrapper = styled.div.attrs(() => ({
-  className: 'd-flex align-items-center justify-content-center',
+  className: 'align-items-center justify-content-center',
 }))(
   ({ theme }) => css`
+    display: flex;
     min-width: 112px;
     max-width: 112px;
     height: 96px;
@@ -36,6 +37,10 @@ export const ImgWrapper = styled.div.attrs(() => ({
       height: 90%;
       width: auto;
     }
+
+    @media (max-width: 576px) {
+      display: none;
+    }
   `,
 );
 
@@ -43,6 +48,10 @@ export const DescriptionWrapper = styled.div.attrs(() => ({
   className: 'd-flex flex-column justify-content-between',
 }))`
   margin-left: ${({ theme }) => theme.spacings.sm};
+
+  @media (max-width: 576px) {
+    margin: 0;
+  }
 `;
 
 export const Title = styled(Link)(
@@ -50,6 +59,10 @@ export const Title = styled(Link)(
     color: ${theme.colors.txtHigh};
     font-size: ${theme.fontSizes.xs};
     line-height: ${theme.lineHeights.heading};
+
+    @media (max-width: 576px) {
+      white-space: wrap;
+    }
   `,
 );
 

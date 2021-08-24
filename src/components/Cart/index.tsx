@@ -62,7 +62,7 @@ const Cart = ({ modalRef }: CartProps) => {
             <Button
               type="ctaLink"
               label={intl.get('cart.toFinish')}
-              toGo={intl.get('routes.dashboard')}
+              toGo={intl.get('routes.confirm')}
             />
             <Price>
               <small>{intl.get('cart.total')}:</small>

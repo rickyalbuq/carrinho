@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const ProductWrapper = styled.div.attrs(() => ({
-  className: 'row offset-1 col-10 d-flex flex-column',
+  className: 'row offset-md-1 col-md-10 d-flex flex-column',
 }))`
   margin: ${({ theme }) => theme.spacings.xxxl} auto;
 `;
@@ -16,11 +16,19 @@ export const Breadcrumbs = styled.h4(
 
 export const RowWrapper = styled.div.attrs(() => ({
   className: 'd-flex',
-}))``;
+}))`
+  @media (max-width: 576px) {
+    flex-wrap: wrap;
+  }
+`;
 
 export const DescriptionWrapper = styled.div.attrs(() => ({
   className: 'd-flex flex-column',
-}))``;
+}))`
+  @media (max-width: 576px) {
+    margin-top: ${({ theme }) => theme.spacings.sm};
+  }
+`;
 
 export const ImgWrapper = styled.div.attrs(() => ({
   className: 'd-flex align-items-center justify-content-center',

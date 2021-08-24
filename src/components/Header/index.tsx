@@ -8,9 +8,10 @@ import { HeaderWrapper, SearchBar, Title } from './styles';
 interface IHeader {
   onTyping?: (event: React.FormEvent<HTMLInputElement>) => void;
   hasSearchBar?: boolean;
+  noCart?: boolean;
 }
 
-const Header: React.FC<IHeader> = ({ onTyping, hasSearchBar }) => {
+const Header: React.FC<IHeader> = ({ onTyping, hasSearchBar, noCart }) => {
   const modal = useRef<HTMLUListElement>(null);
 
   const handleModal = (modal: RefObject<HTMLUListElement>) => {
@@ -29,13 +30,18 @@ const Header: React.FC<IHeader> = ({ onTyping, hasSearchBar }) => {
         <h1>{intl.get('dashboard.title')}</h1>
       </Title>
       {hasSearchBar && <SearchBar onChange={onTyping} />}
-      <Button
-        type="icon"
-        icon="cart"
-        iconSize="md"
-        handleModal={() => handleModal(modal)}
-      />
-      <Cart modalRef={modal} />
+
+      {!noCart && (
+        <>
+          <Button
+            type="icon"
+            icon="cart"
+            iconSize="md"
+            handleModal={() => handleModal(modal)}
+          />
+          <Cart modalRef={modal} />
+        </>
+      )}
     </HeaderWrapper>
   );
 };
