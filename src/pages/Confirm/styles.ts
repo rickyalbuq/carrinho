@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const PageWrapper = styled.div.attrs(() => ({
-  className: 'd-flex flex-column justify-content-center align-items-center',
+  className: 'row d-flex flex-column justify-content-center align-items-center',
 }))`
   margin-top: ${({ theme }) => theme.spacings.huge};
 `;

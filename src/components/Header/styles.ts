@@ -4,11 +4,29 @@ import { Link } from 'react-router-dom';
 
 export const HeaderWrapper = styled.div.attrs(() => ({
   className:
-    'row offset-1 col-10 d-flex justify-content-between align-items-center',
+    'row offset-md-1 col-md-10 d-flex justify-content-between align-items-center',
 }))(
   ({ theme }) => css`
     position: relative;
     margin-top: ${theme.spacings.xxl};
+
+    @media (max-width: 576px) {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      > a {
+        order: 1;
+      }
+
+      > button {
+        order: 2;
+      }
+
+      > input {
+        order: 3;
+        margin-top: ${theme.spacings.sm};
+      }
+    }
   `,
 );
 
@@ -23,7 +41,7 @@ export const Title = styled(Link)(
 
 export const SearchBar = styled.input.attrs(() => ({
   type: 'text',
-  className: 'col-5',
+  className: 'col-md-5',
   placeholder: intl.get('dashboard.placeholder'),
 }))(
   ({ theme }) => css`

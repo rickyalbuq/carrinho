@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const ProductsWrapper = styled.div.attrs(() => ({
-  className: 'row offset-1 col-10 d-flex flex-wrap',
+  className: 'row offset-md-1 col-md-10 d-flex flex-wrap',
 }))(
   ({ theme }) => css`
     margin: ${theme.spacings.xxxl} auto;
@@ -11,7 +11,7 @@ export const ProductsWrapper = styled.div.attrs(() => ({
 
 export const EmptyMessage = styled.div.attrs(() => ({
   className:
-    'row offset-1 col-10 d-flex justify-content-center align-items-center',
+    'row offset-1 col-md-10 d-flex justify-content-center align-items-center',
 }))`
   height: 100%;
 

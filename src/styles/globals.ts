@@ -18,6 +18,8 @@ export default createGlobalStyle`
     background: ${({ theme }) => theme.colors.bgLow};
     color: ${({ theme }) => theme.colors.txtMedium};
     font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
   }
 
   /*!
