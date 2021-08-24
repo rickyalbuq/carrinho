@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { CtaButton } from '../Button/styles';
 
-export const ProductWrapper = styled(Link).attrs(() => ({
+export const ProductWrapper = styled.div.attrs(() => ({
   className: 'd-flex flex-column align-items-center justify-content-between',
 }))(
   ({ theme }) => css`
@@ -14,7 +14,7 @@ export const ProductWrapper = styled(Link).attrs(() => ({
       border-radius: ${theme.radius.md};
     }
 
-    &:hover > ${CtaButton as any} {
+    &:hover > button {
       background: ${theme.colors.bgHigh};
     }
 
@@ -23,6 +23,8 @@ export const ProductWrapper = styled(Link).attrs(() => ({
     }
   `,
 );
+
+export const LinkSection = styled(Link)``;
 
 export const ImgWrapper = styled.div.attrs(() => ({
   className: 'd-flex align-items-center justify-content-center',

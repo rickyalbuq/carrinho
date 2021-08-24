@@ -1,5 +1,11 @@
-interface IProduct {
-  sku?: string;
+export interface Item {
+  sku: string;
+  amount: number;
+  product: Product;
+}
+
+export interface Product {
+  sku: string;
   name: string;
   imageUrl: string;
   availability?: {
@@ -22,5 +28,3 @@ interface IProduct {
     value: string;
   }[];
 }
-
-export default IProduct;

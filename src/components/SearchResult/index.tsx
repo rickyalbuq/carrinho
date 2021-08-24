@@ -1,16 +1,16 @@
 import React from 'react';
 import intl from 'react-intl-universal';
+import { Product } from '../../utils/common';
 
-import IProduct from '../../utils/product';
 import ProductCard from '../ProductCard';
 import { ProductsWrapper, ResultMessage } from './styled';
 
-interface IResult {
-  products: Array<IProduct>;
+interface Result {
+  products: Array<Product>;
   search: string;
 }
 
-const SearchResult: React.FC<IResult> = ({ products, search }) => {
+const SearchResult: React.FC<Result> = ({ products, search }) => {
   return (
     <>
       <ResultMessage>
@@ -19,13 +19,12 @@ const SearchResult: React.FC<IResult> = ({ products, search }) => {
       </ResultMessage>
       <ProductsWrapper>
         {products?.length > 0 &&
-          products?.map((product: IProduct) => (
+          products?.map((product: Product) => (
             <ProductCard
-              imageUrl={product?.imageUrl}
-              name={product?.name}
               price={product?.availability?.price}
               toGo={intl.get('routes.product', { id: product?.sku })}
               key={product?.sku}
+              {...product}
             />
           ))}
       </ProductsWrapper>

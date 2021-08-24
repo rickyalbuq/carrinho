@@ -8,7 +8,7 @@ import intl from 'react-intl-universal';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Error from './pages/Error';
-import Product from './pages/Product';
+import ProductDetail from './pages/ProductDetail';
 
 const Routes: React.FC = () => {
   const { theme, handleTheme } = useHandleTheme();
@@ -25,7 +25,7 @@ const Routes: React.FC = () => {
             <Dashboard />
           </Route>
           <Route path={intl.get('routes.product', { id: '' })}>
-            <Product />
+            <ProductDetail />
           </Route>
           <Route path={intl.get('routes.error')}>
             <Error status="404" />

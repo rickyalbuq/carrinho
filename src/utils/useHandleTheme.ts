@@ -1,9 +1,9 @@
-import { useCallback } from 'react';
 import { DefaultTheme } from 'styled-components';
-import usePersistedState from './usePersistedState';
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import light from '../styles/themes/light';
-import dark from '../styles/themes/dark';
+import * as ActionCreators from './../state/actionCreators/index';
+import { State } from '../state/reducers';
 
 interface Response {
   handleTheme(): void;
@@ -11,11 +11,9 @@ interface Response {
 }
 
 const useHandleTheme = (): Response => {
-  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', dark);
-
-  const handleTheme = useCallback(() => {
-    setTheme((prev) => (prev.title === 'light' ? dark : light));
-  }, [setTheme]);
+  const dispatch = useDispatch();
+  const theme = useSelector((state: State) => state.theme);
+  const { handleTheme } = bindActionCreators(ActionCreators, dispatch);
 
   return { theme, handleTheme };
 };
