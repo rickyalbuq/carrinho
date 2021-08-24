@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Error from './pages/Error';
 import ProductDetail from './pages/ProductDetail';
+import Confirm from './pages/Confirm';
 
 const Routes: React.FC = () => {
   const { theme, handleTheme } = useHandleTheme();
@@ -26,6 +27,9 @@ const Routes: React.FC = () => {
           </Route>
           <Route path={intl.get('routes.product', { id: '' })}>
             <ProductDetail />
+          </Route>
+          <Route path={intl.get('routes.confirm')}>
+            <Confirm />
           </Route>
           <Route path={intl.get('routes.error')}>
             <Error status="404" />
