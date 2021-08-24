@@ -1,34 +1,41 @@
 import React from 'react';
 import intl from 'react-intl-universal';
-import IProduct from '../../utils/product';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addToCart } from '../../state/actionCreators';
+import { Product } from '../../utils/common';
 
 import Button from '../Button';
-import { ImgWrapper, Price, ProductWrapper, Title } from './styles';
+import {
+  ImgWrapper,
+  LinkSection,
+  Price,
+  ProductWrapper,
+  Title,
+} from './styles';
 
-interface ProductProps extends IProduct {
+interface ProductProps extends Product {
   toGo: string;
   price?: number;
 }
 
-const ProductCard: React.FC<ProductProps> = ({
-  toGo,
-  name,
-  imageUrl,
-  price,
-}) => {
+const ProductCard: React.FC<ProductProps> = ({ toGo, price, ...props }) => {
+  const dispatch = useDispatch();
+  const addItem = bindActionCreators(addToCart, dispatch);
+
   return (
-    <ProductWrapper to={toGo}>
-      <div>
+    <ProductWrapper>
+      <LinkSection to={toGo}>
         <ImgWrapper>
-          <img src={imageUrl} alt={name} />
+          <img src={props.imageUrl} alt={props.name} />
         </ImgWrapper>
-        <Title>{name}</Title>
+        <Title>{props.name}</Title>
         <Price>{`R$ ${price},00`}</Price>
-      </div>
+      </LinkSection>
       <Button
         type="cta"
         label={intl.get('dashboard.toBuy')}
-        toGo={intl.get('routes.dashboard')}
+        addItem={() => addItem({ sku: props?.sku, amount: 1, product: props })}
       />
     </ProductWrapper>
   );

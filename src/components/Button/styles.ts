@@ -10,7 +10,7 @@ interface IconButtonProps {
   size?: 'sm' | 'md';
 }
 
-export const CtaButton = styled(Link)(
+export const CtaLink = styled(Link)(
   ({ theme }) => css`
     width: 200px;
     height: 48px;
@@ -22,6 +22,30 @@ export const CtaButton = styled(Link)(
     color: ${theme.colors.txtMedium};
     line-height: ${theme.lineHeights.link};
     border-radius: ${theme.radius.md};
+    &:hover {
+      color: ${theme.colors.txtHigh};
+      background: ${lighten(0.01, theme.colors.bgMedium)};
+    }
+  `,
+);
+
+export const CtaButton = styled.button.attrs(() => ({
+  type: 'button',
+}))(
+  ({ theme }) => css`
+    width: 184px;
+    height: 48px;
+    padding: ${theme.spacings.sm} 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${theme.colors.bgMedium};
+    color: ${theme.colors.txtMedium};
+    line-height: ${theme.lineHeights.link};
+    border: none;
+    cursor: pointer;
+    border-radius: ${theme.radius.md};
+    font-family: 'Poppins', sans-serif;
     &:hover {
       color: ${theme.colors.txtHigh};
       background: ${lighten(0.01, theme.colors.bgMedium)};
@@ -63,8 +87,11 @@ export const LinkButton = styled(Link)`
 
 export const IconButton = styled.button`
   cursor: pointer;
-  background: none;
+  background: ${({ theme }) => theme.colors.bgMedium};
+  padding: ${({ theme }) => theme.spacings.xxs}
+    ${({ theme }) => theme.spacings.xs};
   border: none;
+  border-radius: ${({ theme }) => theme.radius.sm};
   &:hover rect {
     fill: ${({ theme }) => theme.colors.txtHigh};
   }

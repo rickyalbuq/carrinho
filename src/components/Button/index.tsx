@@ -3,20 +3,38 @@ import React from 'react';
 import { ReactComponent as Cart } from '../../assets/icons/cart.svg';
 import { ReactComponent as Trash } from '../../assets/icons/trash.svg';
 
-import { CtaButton, GhostButton, LinkButton, IconButton } from './styles';
+import {
+  CtaButton,
+  GhostButton,
+  LinkButton,
+  IconButton,
+  CtaLink,
+} from './styles';
 
 interface Props {
-  toGo: any;
+  toGo?: any;
   label?: string;
-  type?: 'cta' | 'ghost' | 'link' | 'icon';
+  type?: 'cta' | 'ghost' | 'link' | 'icon' | 'ctaLink';
   icon?: 'cart' | 'trash';
   iconSize?: 'sm' | 'md';
+  addItem?(): void;
+  handleModal?(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const Button: React.FC<Props> = ({ label, type, toGo, icon, iconSize }) => {
+const Button: React.FC<Props> = ({
+  label,
+  type,
+  toGo,
+  icon,
+  iconSize,
+  addItem,
+  handleModal,
+}) => {
   switch (type) {
     case 'cta':
-      return <CtaButton to={toGo}>{label}</CtaButton>;
+      return <CtaButton onClick={addItem}>{label}</CtaButton>;
+    case 'ctaLink':
+      return <CtaLink to={toGo}>{label}</CtaLink>;
     case 'ghost':
       return <GhostButton to={toGo}>{label}</GhostButton>;
     case 'link':
@@ -42,7 +60,7 @@ const Button: React.FC<Props> = ({ label, type, toGo, icon, iconSize }) => {
       switch (icon) {
         case 'cart':
           return (
-            <IconButton size={iconSize}>
+            <IconButton onClick={handleModal} size={iconSize}>
               <Cart />
             </IconButton>
           );

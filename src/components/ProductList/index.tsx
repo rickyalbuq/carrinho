@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import intl from 'react-intl-universal';
+import { useSelector } from 'react-redux';
+import { State } from '../../state/reducers';
+import { Product } from '../../utils/common';
 
-import IProduct from '../../utils/product';
 import ProductCard from '../ProductCard';
 import { EmptyMessage, ProductsWrapper } from './styled';
 
-const AllResult = () => {
-  const products = JSON.parse(localStorage.getItem('products') || '{}');
+const ProductList = () => {
+  const products = useSelector((state: State) => state.product);
+
+  useEffect(() => {}, [products]);
 
   return (
     <ProductsWrapper>
       {products?.length ? (
-        products?.map((product: IProduct) => {
+        products?.map((product: Product) => {
           return (
             <ProductCard
-              imageUrl={product?.imageUrl}
-              name={product?.name}
               price={product?.availability?.price}
               toGo={intl.get('routes.product', { id: product?.sku })}
               key={product?.sku}
+              {...product}
             />
           );
         })
@@ -31,4 +34,4 @@ const AllResult = () => {
   );
 };
 
-export default AllResult;
+export default ProductList;
